@@ -4,7 +4,7 @@
 
 ### Achievements
 
-[![License](https://poser.pugx.org/bluzphp/module-profile/license)](https://packagist.org/packages/bluzphp/module-profile)
+[![License](https://poser.pugx.org/bluzphp/module-phones/license)](https://packagist.org/packages/bluzphp/module-phones)
 
 Usage
 -------------------------
@@ -12,7 +12,7 @@ Usage
 To install the module run the command:
   
 ```bash
-php /vendor/bin/bluzman module:install profile
+php /vendor/bin/bluzman module:install phones
 php /vendor/bin/bluzman db:migrate
 ```
 
@@ -20,5 +20,5 @@ php /vendor/bin/bluzman db:migrate
 To remove the module, run the command:
     
 ```bash
-php /vendor/bin/bluzman module:remove profile
+php /vendor/bin/bluzman module:remove phones
 ```
