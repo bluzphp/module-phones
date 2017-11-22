@@ -11,8 +11,8 @@ use Bluz\Grid\Source\SelectSource;
  *
  * @package  Application\UsersPhones
  *
- * @author   dev
- * @created  2017-11-16 18:33:06
+ * @author   Anton Shevchuk
+ * @created  2017-11-21 18:26:26
  */
 class Grid extends \Bluz\Grid\Grid
 {
@@ -32,6 +32,21 @@ class Grid extends \Bluz\Grid\Grid
 
         $this->setAdapter($adapter);
         $this->setDefaultLimit(25);
-        $this->setAllowOrders(['id', 'userId', 'phone', 'status']);
+        $this->setAllowFilters([
+            'id',
+            'userId',
+            'number',
+            'status',
+            'created',
+            'updated',
+        ]);
+        $this->setAllowOrders([
+            'id',
+            'userId',
+            'number',
+            'status',
+            'created',
+            'updated',
+        ]);
     }
 }

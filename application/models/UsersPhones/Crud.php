@@ -9,8 +9,8 @@ namespace Application\UsersPhones;
  *
  * @package  Application\UsersPhones
  *
- * @author   dev
- * @created  2017-11-16 18:32:43
+ * @author   Anton Shevchuk
+ * @created  2017-11-21 18:26:26
  */
 class Crud extends \Bluz\Crud\Table
 {
