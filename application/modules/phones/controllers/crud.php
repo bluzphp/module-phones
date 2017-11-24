@@ -3,7 +3,7 @@
  * CRUD controller for UsersPhones model
  *
  * @author   dev
- * @created  2017-11-21 18:54:42
+ * @created  2017-11-21 14:39:14
  */
 
 /**
@@ -28,7 +28,7 @@ return function () {
     $crud = new Crud(UsersPhones\Crud::getInstance());
 
     $crud->get('system', 'crud/get');
-    $crud->post('system', 'crud/post');
+    $crud->post('phones', 'crud/post');
     $crud->put('system', 'crud/put');
     $crud->delete('system', 'crud/delete');
 

@@ -30,6 +30,10 @@ class Row extends \Bluz\Db\Row
      */
     public function beforeSave() : void
     {
+        $this->addValidator('userId')
+            ->numeric()
+            ->required();
+
         $this->addValidator('number')
             ->numeric()
             ->length(12, 12)
