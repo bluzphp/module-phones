@@ -28,7 +28,7 @@ class Row extends \Bluz\Db\Row
     /**
      * @return void
      */
-    public function beforeSave() : void
+    protected function afterRead() : void
     {
         $this->addValidator('userId')
             ->numeric()

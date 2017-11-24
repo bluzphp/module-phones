@@ -6,18 +6,6 @@ use Bluz\Http\RequestMethod;
 
 $uid = uniqid('form_', false);
 $url = $this->url('phones', 'crud');
-
-// initialize validators
-$row->beforeSave();
-switch ($method) {
-    case RequestMethod::POST:
-        $row->beforeInsert();
-        break;
-    case RequestMethod::PUT:
-    case RequestMethod::PATCH:
-        $row->beforeUpdate();
-        break;
-}
 ?>
 <script>
   // use input[data-ajax-load]
