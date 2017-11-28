@@ -4,23 +4,41 @@
  */
 namespace Application\UsersPhones;
 
-use \Application\UsersPhones\Row;
-
 /**
  * Class Table for `users_phones`
  *
  * @package  Application\UsersPhones
  *
- * @author   dev
- * @created  2017-11-16 18:26:15
+ * @author   Anton Shevchuk
+ * @created  2017-11-21 18:26:26
  */
 class Table extends \Bluz\Db\Table
 {
+    /**
+     * Pending phone verification
+     */
+    const STATUS_PENDING = 'pending';
+    /**
+     * Active phone number
+     */
+    const STATUS_ACTIVE = 'active';
+    /**
+     * Disabled by administrator or by user
+     */
+    const STATUS_DISABLED = 'disabled';
+    /**
+     * Removed by user
+     */
+    const STATUS_DELETED = 'deleted';
+
     /**
      * @var string
      */
     protected $name = 'users_phones';
 
+    /**
+     * @var string
+     */
     protected $rowClass = Row::class;
 
     /**
@@ -28,4 +46,14 @@ class Table extends \Bluz\Db\Table
      * @var array
      */
     protected $primary = ['id'];
+
+    /**
+     * Init table relations
+     *
+     * @return void
+     */
+    public function init() : void
+    {
+        $this->linkTo('userId', 'Users', 'id');
+    }
 }

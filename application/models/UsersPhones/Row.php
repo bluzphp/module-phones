@@ -4,6 +4,8 @@
  */
 namespace Application\UsersPhones;
 
+use Bluz\Validator\Traits\Validator;
+
 /**
  * Class Row for `users_phones`
  *
@@ -16,22 +18,35 @@ namespace Application\UsersPhones;
  * @property string $created
  * @property string $updated
  *
- * @author   dev
- * @created  2017-11-16 18:26:15
+ * @author   Anton Shevchuk
+ * @created  2017-11-21 18:26:26
  */
 class Row extends \Bluz\Db\Row
 {
-    /**
-     * @return void
-     */
-    public function beforeInsert() : void
-    {
-    }
+    use Validator;
 
     /**
      * @return void
      */
-    public function beforeUpdate() : void
+    protected function afterRead() : void
     {
+        $this->addValidator('userId')
+            ->numeric()
+            ->required();
+
+        $this->addValidator('number')
+            ->numeric()
+            ->length(12, 12)
+            ->required();
+    }
+
+    /**
+     * getUser
+     *
+     * @return \Application\Users\Row|false
+     */
+    public function getUser()
+    {
+        return $this->getRelation('Users');
     }
 }
