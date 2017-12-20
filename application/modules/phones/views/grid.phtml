@@ -21,23 +21,23 @@ $uid = $grid->getUid();
          <?= __('Create') ?>      </a>
       <!-- Place filters here -->
       <a href="<?= $grid->filter('status', 'eq', false, true) ?>" data-ajax
-         class="btn btn-secondary <?= (!$grid->getFilter('status', 'eq') ? 'btn-info' : '') ?>">
+         class="btn <?= (!$grid->getFilter('status', 'eq') ? 'btn-info' : 'btn-secondary') ?>">
           <?= __('All') ?>
       </a>
       <a href="<?= $grid->filter('status', 'eq', Table::STATUS_PENDING) ?>" data-ajax
-         class="btn btn-secondary <?= (Table::STATUS_PENDING === $grid->getFilter('status', 'eq')? 'btn-info' : '') ?>">
+         class="btn <?= (Table::STATUS_PENDING === $grid->getFilter('status', 'eq')? 'btn-info' : 'btn-secondary') ?>">
           <?= Table::STATUS_PENDING ?>
       </a>
       <a href="<?= $grid->filter('status', 'eq', Table::STATUS_ACTIVE) ?>" data-ajax
-         class="btn btn-secondary <?= (Table::STATUS_ACTIVE === $grid->getFilter('status', 'eq')? 'btn-info' : '') ?>">
+         class="btn <?= (Table::STATUS_ACTIVE === $grid->getFilter('status', 'eq')? 'btn-info' : 'btn-secondary') ?>">
           <?= Table::STATUS_ACTIVE ?>
       </a>
       <a href="<?= $grid->filter('status', 'eq', Table::STATUS_DISABLED) ?>" data-ajax
-         class="btn btn-secondary <?= (Table::STATUS_DISABLED === $grid->getFilter('status', 'eq')? 'btn-info' : '') ?>">
+         class="btn <?= (Table::STATUS_DISABLED === $grid->getFilter('status', 'eq')? 'btn-info' : 'btn-secondary') ?>">
           <?= Table::STATUS_DISABLED ?>
       </a>
       <a href="<?= $grid->filter('status', 'eq', Table::STATUS_DELETED) ?>" data-ajax
-         class="btn btn-secondary <?= (Table::STATUS_DELETED === $grid->getFilter('status', 'eq')? 'btn-info' : '') ?>">
+         class="btn <?= (Table::STATUS_DELETED === $grid->getFilter('status', 'eq')? 'btn-info' : 'btn-secondary') ?>">
           <?= Table::STATUS_DELETED ?>
       </a>
     </div>
