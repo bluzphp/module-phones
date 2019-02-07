@@ -44,6 +44,8 @@ class Row extends \Bluz\Db\Row
      * getUser
      *
      * @return \Application\Users\Row|false
+     * @throws \Bluz\Db\Exception\RelationNotFoundException
+     * @throws \Bluz\Db\Exception\TableNotFoundException
      */
     public function getUser()
     {
