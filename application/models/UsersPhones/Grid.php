@@ -1,7 +1,9 @@
 <?php
+
 /**
  * @namespace
  */
+
 namespace Application\UsersPhones;
 
 use Bluz\Grid\Source\SelectSource;
@@ -24,7 +26,7 @@ class Grid extends \Bluz\Grid\Grid
     /**
      * @return void
      */
-    public function init() : void
+    public function init(): void
     {
         // Current table as source of grid
         $adapter = new SelectSource();

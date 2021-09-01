@@ -1,7 +1,9 @@
 <?php
+
 /**
  * @namespace
  */
+
 namespace Application\UsersPhones;
 
 /**
@@ -17,19 +19,19 @@ class Table extends \Bluz\Db\Table
     /**
      * Pending phone verification
      */
-    const STATUS_PENDING = 'pending';
+    public const STATUS_PENDING = 'pending';
     /**
      * Active phone number
      */
-    const STATUS_ACTIVE = 'active';
+    public const STATUS_ACTIVE = 'active';
     /**
      * Disabled by administrator or by user
      */
-    const STATUS_DISABLED = 'disabled';
+    public const STATUS_DISABLED = 'disabled';
     /**
      * Removed by user
      */
-    const STATUS_DELETED = 'deleted';
+    public const STATUS_DELETED = 'deleted';
 
     /**
      * @var string
@@ -52,7 +54,7 @@ class Table extends \Bluz\Db\Table
      *
      * @return void
      */
-    public function init() : void
+    public function init(): void
     {
         $this->linkTo('userId', 'Users', 'id');
     }

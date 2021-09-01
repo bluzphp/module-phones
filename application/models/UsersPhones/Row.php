@@ -1,7 +1,9 @@
 <?php
+
 /**
  * @namespace
  */
+
 namespace Application\UsersPhones;
 
 use Bluz\Validator\Traits\Validator;
@@ -28,7 +30,7 @@ class Row extends \Bluz\Db\Row
     /**
      * @return void
      */
-    protected function afterRead() : void
+    protected function afterRead(): void
     {
         $this->addValidator('userId')
             ->numeric()
@@ -44,6 +46,8 @@ class Row extends \Bluz\Db\Row
      * getUser
      *
      * @return \Application\Users\Row|false
+     * @throws \Bluz\Db\Exception\RelationNotFoundException
+     * @throws \Bluz\Db\Exception\TableNotFoundException
      */
     public function getUser()
     {

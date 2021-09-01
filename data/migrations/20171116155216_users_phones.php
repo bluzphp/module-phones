@@ -41,6 +41,5 @@ class UsersPhones extends AbstractMigration
                 'update' => 'CASCADE'
             ])
             ->create();
-
     }
 }
