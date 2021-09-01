@@ -1,15 +1,17 @@
 # Module Users Profile for Bluz Skeleton
+
 ## Achievements
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/bluzphp/module-media.svg?label=version&style=flat)](https://packagist.org/packages/bluzphp/module-media)
+[![Latest Stable Version](https://img.shields.io/packagist/v/bluzphp/module-phones.svg?label=version&style=flat)](https://packagist.org/packages/bluzphp/module-phones)
 
-[![Build Status](https://img.shields.io/travis/bluzphp/module-media/master.svg?style=flat)](https://travis-ci.org/bluzphp/module-media)
+[![Build Status](https://img.shields.io/travis/bluzphp/module-phones/master.svg?style=flat)](https://travis-ci.com/bluzphp/module-phones)
 
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/bluzphp/module-media.svg?style=flat)](https://scrutinizer-ci.com/g/bluzphp/module-media/)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/bluzphp/module-phones.svg?style=flat)](https://scrutinizer-ci.com/g/bluzphp/module-phones/)
 
-[![Total Downloads](https://img.shields.io/packagist/dt/bluzphp/module-media.svg?style=flat)](https://packagist.org/packages/bluzphp/module-media)
+[![Total Downloads](https://img.shields.io/packagist/dt/bluzphp/module-phones.svg?style=flat)](https://packagist.org/packages/bluzphp/module-phones)
 
-[![License](https://img.shields.io/packagist/l/bluzphp/module-media.svg?style=flat)](https://packagist.org/packages/bluzphp/module-media)
+[![License](https://img.shields.io/packagist/l/bluzphp/module-phones.svg?style=flat)](https://packagist.org/packages/bluzphp/module-phones)
+
 
 ## Usage
 ### Install module

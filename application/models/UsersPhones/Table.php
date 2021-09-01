@@ -1,7 +1,9 @@
 <?php
+
 /**
  * @namespace
  */
+
 namespace Application\UsersPhones;
 
 /**
@@ -52,7 +54,7 @@ class Table extends \Bluz\Db\Table
      *
      * @return void
      */
-    public function init() : void
+    public function init(): void
     {
         $this->linkTo('userId', 'Users', 'id');
     }

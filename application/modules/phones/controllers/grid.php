@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Grid controller for UsersPhones model
  *
@@ -27,7 +28,7 @@ return function () {
     Layout::breadCrumbs(
         [
             Layout::ahref('Dashboard', ['dashboard', 'index']),
-            __('Pages')
+            __('Phones')
         ]
     );
     $grid = new UsersPhones\Grid();
