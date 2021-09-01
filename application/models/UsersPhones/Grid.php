@@ -25,6 +25,7 @@ class Grid extends \Bluz\Grid\Grid
 
     /**
      * @return void
+     * @throws \Bluz\Grid\GridException
      */
     public function init(): void
     {
