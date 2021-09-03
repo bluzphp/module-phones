@@ -8,12 +8,12 @@ use Application\UsersPhones\Table;
 if (!$grid) return;
 $uid = $grid->getUid();
 ?>
-<div class="clearfix" data-spy="grid" data-grid="<?=$uid?>">
-  <script>
-    // use data-spy="grid" for use AJAX for reload grid
-    require(['bluz.grid']);
-  </script>
 
+<script type="module">
+  import '<?=$this->baseUrl('/js/bluz.grid.js');?>';
+</script>
+
+<div class="clearfix" data-spy="grid" data-grid="<?=$uid?>">
   <nav class="navbar navbar-light bg-light justify-content-between">
     <div>
       <a href="<?=$this->url('phones', 'crud')?>" class="btn btn-primary"

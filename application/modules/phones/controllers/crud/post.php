@@ -29,6 +29,13 @@ use Bluz\Validator\Exception\ValidatorException;
  */
 return function ($crud, $primary, $data) {
     try {
+        // Unset empty primary key(s)
+        foreach ($primary as $key => $value) {
+            if (empty($value)) {
+                unset($data[$key]);
+            }
+        }
+
         // Result is Primary Key(s)
         $result = $crud->createOne($data);
 

@@ -2,59 +2,65 @@
 /** @var \Application\UsersPhones\Row $row */
 
 use Application\UsersPhones\Table;
-use Bluz\Http\RequestMethod;
 
 $uid = uniqid('form_', false);
 $url = $this->url('phones', 'crud');
 ?>
-<script>
-  // use input[data-ajax-load]
-  require(['bluz.autocomplete']);
-</script>
-<form id="<?=$uid?>" action="<?=$url?>" class="form-horizontal" data-ajax method="POST" novalidate>
-  <input type="hidden" name="_method" value="<?=$method?>"/>
-  <input type="hidden" id="id" name="id" value="<?= $row['id'] ?>"/>
-  <div class="modal-header">
-    <h4 class="modal-title"><?=__('Phone number')?></h4>
-    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
-  </div>
-  <div class="modal-body">
-    <div class="form-group row">
-      <label class="col-form-label col-lg-4" for="login"><?=__('User')?></label>
-      <div class="col-lg-8">
-        <input type="text" id="login" class="form-control modal-focus" name="login" value="<?= $row['userId'] ? $row->getUser()->login : '' ?>"
-               data-ajax-load="<?=$this->url('users', 'search')?>"
-               data-ajax-target="#userId"
-               autocomplete="off" required />
-        <div class="invalid-feedback"><?=__('require a valid username')?></div>
-        <input type="hidden" id="userId" name="userId" value="<?= $row['userId'] ?>"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-form-label col-lg-4" for="number"><?=__('Phone')?></label>
-      <div class="col-lg-8">
-        <input type="text" id="number" name="number" class="form-control" value="<?= $row['number'] ?>" required/>
-        <div class="invalid-feedback"><?=__('phone number is required, and it should has valid number format')?></div>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-form-label col-lg-4" for="status"><?=__('Status')?></label>
-      <div class="col-lg-8">
-        <?= $this->select('status', [
-            Table::STATUS_PENDING => __(Table::STATUS_PENDING),
-            Table::STATUS_ACTIVE => __(Table::STATUS_ACTIVE),
-            Table::STATUS_DISABLED => __(Table::STATUS_DISABLED),
-            Table::STATUS_DELETED => __(Table::STATUS_DELETED)
-        ], $row['status'], ['id' => 'status', 'class' => 'form-control']);?>
-      </div>
-    </div>
-    <!-- Place additional form fields here -->
-  </div>
-  <div class="modal-footer">
-    <button type="submit" class="btn btn-primary"><?=__('Save')?></button>
-      <button type="button" class="btn btn-light" data-bs-dismiss="modal"><?= __('Close') ?></button>
-  </div>
-</form>
+    <script type="module">
+      import { autocomplete } from '<?=$this->baseUrl('/js/bluz.autocomplete.js');?>'
+      autocomplete('#login')
+    </script>
+
+    <form id="<?= $uid ?>" action="<?= $url ?>" class="form-horizontal" data-ajax method="POST" novalidate>
+        <input type="hidden" name="_method" value="<?= $method ?>"/>
+        <input type="hidden" id="id" name="id" value="<?= $row['id'] ?>"/>
+        <div class="modal-header">
+            <h4 class="modal-title"><?= __('Phone number') ?></h4>
+            <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group row mb-2">
+                <label class="col-form-label col-lg-4" for="login"><?= __('User') ?></label>
+                <div class="col-lg-8">
+                    <input type="text" id="login" class="form-control modal-focus" name="login"
+                           value="<?= $row['userId'] ? $row->getUser()->login : '' ?>"
+                           data-ajax-load="<?= $this->url('users', 'search') ?>"
+                           data-ajax-target="#userId"
+                           autocomplete="off" required/>
+                    <div class="invalid-feedback"><?= __('require a valid username') ?></div>
+                    <input type="hidden" id="userId" name="userId" value="<?= $row['userId'] ?>"/>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-form-label col-lg-4" for="number"><?= __('Phone') ?></label>
+                <div class="col-lg-8">
+                    <input type="text" id="number" name="number" class="form-control" value="<?= $row['number'] ?>"
+                           required/>
+                    <div class="invalid-feedback"><?= __(
+                            'phone number is required, and it should has valid number format'
+                        ) ?></div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-lg-4" for="status"><?= __('Status') ?></label>
+                <div class="col-lg-8">
+                    <?= $this->select('status', [
+                        Table::STATUS_PENDING => __(Table::STATUS_PENDING),
+                        Table::STATUS_ACTIVE => __(Table::STATUS_ACTIVE),
+                        Table::STATUS_DISABLED => __(Table::STATUS_DISABLED),
+                        Table::STATUS_DELETED => __(Table::STATUS_DELETED)
+                    ],                $row['status'], ['id' => 'status', 'class' => 'form-control']); ?>
+                </div>
+            </div>
+            <!-- Place additional form fields here -->
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary"><?= __('Save') ?></button>
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal"><?= __('Close') ?></button>
+        </div>
+    </form>
+
+
 <?php
 // need for plain request
 if (isset($errors)) :
