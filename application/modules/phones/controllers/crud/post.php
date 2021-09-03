@@ -35,6 +35,7 @@ return function ($crud, $primary, $data) {
                 unset($data[$key]);
             }
         }
+        unset($data['login']);
 
         // Result is Primary Key(s)
         $result = $crud->createOne($data);
