@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 use Phinx\Migration\AbstractMigration;
 
-class UsersPhonesPermissions extends AbstractMigration
+final class UsersPhonesPermissions extends AbstractMigration
 {
     /**
      * Migrate Up.
