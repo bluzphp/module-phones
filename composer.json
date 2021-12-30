@@ -2,7 +2,7 @@
   "name": "bluzphp/module-phones",
   "type": "bluz-module",
   "license": "MIT",
-  "description": "bluz profile module",
+  "description": "bluz phones module",
   "require": {
     "bluzphp/composer-plugin": "~2.4"
   }
